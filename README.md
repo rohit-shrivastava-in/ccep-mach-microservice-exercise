@@ -62,16 +62,18 @@ Add clear documentation in your repo that explains:
 
 
 ### 4. Testing
+- Write **unit tests** for your API endpoints.  
+- Provide instructions on how to run the tests.  
 
 
-- Infrastructure as Code (Terraform) for provisioning (consider a `/iac` or `/terraform` folder).
-
-### 6. CI/CD (Continuous Integration / Continuous Deployment)
+### 5. Optional Enhancements 
+- Cloud deployment instructions (AWS, Azure, GCP).  
+- Simple frontend interface (e.g., React) to interact with the API. 
+- Infrastructure as Code (Terraform) for provisioning.
 - Briefly describe your approach to automated testing and deployment (CI/CD).
-- Mention which tools or platforms you would use (e.g., GitHub Actions, GitLab CI, CircleCI).
-- Explain what steps would be automated (e.g., running tests, building, deploying).
 
 
+## Deliverables
 - Working microservice in your chosen language/framework.  
 - README documenting design and setup.  
 - Unit tests.  
