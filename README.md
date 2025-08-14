@@ -4,9 +4,8 @@
 
 ## Candidate Name
 
-| Candidate Name |
-|:--------------:|
-|                |
+**Candidate Name:** ___________________
+
 
 ---
 
@@ -92,10 +91,5 @@ Add clear documentation in your repo that explains:
 ---
 
 
-## Evaluation Criteria
-- Correctness of API functionality
-- Code quality and structure
-- Clarity of documentation
-- Alignment with MACH principles
-- Test coverage and reliability
-- (Optional) Cloud-native and headless enhancements
+## Candidate Note on Evaluation
+Submissions will be evaluated on correctness, code quality, documentation clarity, adherence to MACH principles, and test coverage.
