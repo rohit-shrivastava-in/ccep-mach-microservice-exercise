@@ -72,7 +72,7 @@ npm run test
 ## 📌 Notes
 
 - This service currently uses **in-memory storage** to keep health goals.  
-- All data will be lost when the server restar
+- All data will be lost when the server restarts
 
 
 

@@ -1,10 +1,21 @@
 import rateLimit from "express-rate-limit";
-import { AppError } from "../utils/app-error"; // adjust path
+import { AppError } from "../utils/app-error";
 import { StatusCodes } from "../constants/http-status-codes";
 
+const windowMinutes = Number(process.env.RATE_LIMIT_WINDOW_MINUTES ?? "15")
+const maxRequests = Number(process.env.RATE_LIMIT_MAX_REQUESTS ?? "100")
+
+const resolvedWindowMs = Number.isFinite(windowMinutes) && windowMinutes > 0
+  ? windowMinutes * 60 * 1000
+  : 15 * 60 * 1000
+
+const resolvedMax = Number.isFinite(maxRequests) && maxRequests > 0
+  ? Math.floor(maxRequests)
+  : 100
+
 export const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100,                 // max requests per window per IP
+  windowMs: resolvedWindowMs,
+  max: resolvedMax,
   standardHeaders: true,    // adds `RateLimit-*` headers
   legacyHeaders: false,     // disables `X-RateLimit-*` headers
   handler: (req, res, next, options) => {

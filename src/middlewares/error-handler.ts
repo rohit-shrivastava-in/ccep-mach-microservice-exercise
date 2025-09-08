@@ -23,7 +23,6 @@ export function errorHandler(
     });
   }
 
-  console.error('Unexpected error:', err);
   return res
     .status(StatusCodes.INTERNAL_SERVER_ERROR)
     .json({ error: 'Internal server error' });

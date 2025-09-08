@@ -2,19 +2,23 @@ import { Router } from "express"
 import { HealthGoalController } from "../controllers/goal-controller"
 import { HealthGoalService } from "../services/health-goal-service"
 
+import { HealthGoalRepository } from "../repositories/health-goal-repository"
+import { logger } from "../utils/logger";
+import { InMemoryStore } from "../store/in-memory-store";
+import { HealthGoal } from "../models/health-goal";
+import { wrapAsync } from "../utils/wrapAsync";
+
 const router = Router();
 
-import { InMemoryHealthGoalRepository } from "../repositories/health-goal-repository"
-import { logger } from "../utils/logger";
-
-const repo = new InMemoryHealthGoalRepository(logger)
+const store = new InMemoryStore<HealthGoal>();
+const repo = new HealthGoalRepository(store)
 const service = new HealthGoalService(repo, logger)
 const controller = new HealthGoalController(service, logger)
 
-router.post("/", controller.createGoal.bind(controller));
-router.get("/", controller.getAllGoals.bind(controller));
-router.get("/:id", controller.getGoalById.bind(controller));
-router.put("/:id", controller.updateGoal.bind(controller));
-router.delete("/:id", controller.deleteGoal.bind(controller));
+router.post("/", wrapAsync(controller.createGoal.bind(controller)));
+router.get("/", wrapAsync(controller.getAllGoals.bind(controller)));
+router.get("/:id", wrapAsync(controller.getGoalById.bind(controller)));
+router.put("/:id", wrapAsync(controller.updateGoal.bind(controller)));
+router.delete("/:id", wrapAsync(controller.deleteGoal.bind(controller)));
 
 export default router;
