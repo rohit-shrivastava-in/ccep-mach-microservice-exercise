@@ -6,6 +6,75 @@
 
 **Candidate Name:** Rohit SHRIVASTAVA
 
+---
+
+A simple **Node.js + TypeScript** microservice built with **Express**, demonstrating **MACH principles**:
+
+
+## 🚀 Features
+
+- CRUD APIs for managing health goals
+- Input validation using **Zod**
+- Structured logging with **Winston**
+- Centralized error handling
+- Async wrapper to simplify controller code
+- In-memory repository (replaceable with DB)
+
+
+## ⚡️ API Endpoints
+
+### Health Goals
+- `POST   /health-goals` → Create a new goal  
+- `GET    /health-goals` → List all goals  
+- `GET    /health-goals/:id` → Get goal by ID  
+- `PUT    /health-goals/:id` → Update a goal  
+- `DELETE /health-goals/:id` → Delete a goal  
+
+
+## 🛠️ Tech Stack
+
+- **Node.js + TypeScript**
+- **Express**
+- **Zod** (validation)
+- **Winston** (logging)
+
+
+## 🚦 Getting Started
+
+### 1. Install dependencies
+```bash
+npm install
+```
+
+### 2. Run in dev mode
+```bash
+npm run dev
+```
+
+
+### 3. Build and start
+```bash
+npm run build
+npm start
+```
+
+### 4. Run tests
+```bash
+npm run test
+```
+
+## 🧪 Testing
+
+- Unit tests written with Jest and Supertest.
+- Covers controllers and endpoints.
+- Run npm test to execute all tests with coverage.
+
+## 📌 Notes
+
+- This service currently uses **in-memory storage** to keep health goals.  
+- All data will be lost when the server restar
+
+
 
 ---
 
