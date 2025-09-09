@@ -97,7 +97,7 @@ npm run test
 - Headless → No UI, purely backend APIs — can be consumed by any frontend (web, mobile, or partner system).
 
 ## 🖼️ Architecture diagram
-![Architecture diagram](https://ik.imagekit.io/906eypkoy87/rohit-shrivastava/Architecture%20diagram/ccep-mach-microservice-exercise-flow_nH3-u8-7a.png "Architecture diagram")
+![Architecture diagram](https://ik.imagekit.io/906eypkoy87/Architecture%20diagram/diagram-export-09-09-2025-12_52_44_vEO6DjIBj.svg "Architecture diagram")
 
 ---
 
