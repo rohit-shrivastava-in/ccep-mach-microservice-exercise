@@ -18,7 +18,6 @@ export class HealthGoalService {
   async getGoalById(id: string) {
     const goal = await this.repo.findById(id);
     if (!goal) {
-      this.logger.error(`getGoalById:: Health goal with ID: ${id} not found`);
       throw new AppError('Health goal not found', StatusCodes.NOT_FOUND);
     }
     return goal;
@@ -27,7 +26,6 @@ export class HealthGoalService {
   async updateGoal(id: string, data: Partial<Omit<HealthGoal, 'id' | 'userId' | 'createdAt' | 'updatedAt'>>) {
     const updated = await this.repo.update(id, data);
     if (!updated) {
-      this.logger.error(`updateGoal:: Health goal with ID: ${id} not found for update`);
       throw new AppError('Health goal not found', StatusCodes.NOT_FOUND);
     }
     return updated;

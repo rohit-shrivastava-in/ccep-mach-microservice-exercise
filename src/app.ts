@@ -2,9 +2,10 @@ import express from 'express';
 import helmet from 'helmet';
 import cors from 'cors';
 import goalRoutes from "./routes/goal-routes"
-import { errorHandler } from "./middlewares/error-handler"
+import { errorMiddleware } from "./middlewares/error-handler"
 import { limiter } from './middlewares/rate-limiter';
 import { requestLogger } from './middlewares/request-logger';
+import { logger } from './utils/logger';
 
 const app = express();
 
@@ -29,6 +30,6 @@ app.use((req, res) => {
 });
 
 // Error handling middleware
-app.use(errorHandler);
+app.use(errorMiddleware(logger));
 
 export default app;

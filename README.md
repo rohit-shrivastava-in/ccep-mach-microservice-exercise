@@ -21,6 +21,18 @@ A simple **Node.js + TypeScript** microservice built with **Express**, demonstra
 - In-memory repository (replaceable with DB)
 
 
+##  Error flow
+
+Controller/Service/Repo
+      throw error
+         ↓
+     wrapAsync
+         ↓
+   errorMiddleware
+         ↓
+      Response
+
+
 ## ⚡️ API Endpoints
 
 ### Health Goals
