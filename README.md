@@ -21,8 +21,9 @@ A simple **Node.js + TypeScript** microservice built with **Express**, demonstra
 - In-memory repository (replaceable with DB)
 
 
-##  Error flow
+## 🧩 Error flow
 
+```bash
 Controller/Service/Repo
       throw error
          ↓
@@ -31,6 +32,7 @@ Controller/Service/Repo
    errorMiddleware
          ↓
       Response
+```
 
 
 ## ⚡️ API Endpoints
@@ -49,6 +51,7 @@ Controller/Service/Repo
 - **Express**
 - **Zod** (validation)
 - **Winston** (logging)
+- **Jest + Supertest** → testing
 
 
 ## 🚦 Getting Started
@@ -79,14 +82,22 @@ npm run test
 
 - Unit tests written with Jest and Supertest.
 - Covers controllers and endpoints.
-- Run npm test to execute all tests with coverage.
+- Run `npm test  to execute all tests with coverage.
 
 ## 📌 Notes
 
 - This service currently uses **in-memory storage** to keep health goals.  
 - All data will be lost when the server restarts
 
+## 🧭 Mapping to MACH Principles
 
+- Microservices → Independent service handling only Health Goals, easily deployable as a container.
+- API-first → All functionality exposed via REST APIs (/health-goals endpoints), contract-driven design.
+- Cloud-native → Stateless, lightweight Node.js service, can run in Docker/Kubernetes, supports scaling.
+- Headless → No UI, purely backend APIs — can be consumed by any frontend (web, mobile, or partner system).
+
+## 🖼️ Architecture diagram
+![Architecture diagram](https://ik.imagekit.io/906eypkoy87/rohit-shrivastava/Architecture%20diagram/ccep-mach-microservice-exercise-flow_nH3-u8-7a.png "Architecture diagram")
 
 ---
 
