@@ -24,6 +24,7 @@ app.use(requestLogger);
 // Routes
 app.use("/health-goals", goalRoutes);
 
+
 // Catch-all for unknown routes (404)
 app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });

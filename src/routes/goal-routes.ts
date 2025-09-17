@@ -11,9 +11,9 @@ import { wrapAsync } from "../utils/wrapAsync";
 const router = Router();
 
 const store = new InMemoryStore<HealthGoal>();
-const repo = new HealthGoalRepository(store)
-const service = new HealthGoalService(repo, logger)
-const controller = new HealthGoalController(service, logger)
+const repo = new HealthGoalRepository(store);
+const service = new HealthGoalService(repo, logger);
+const controller = new HealthGoalController(service, logger);
 
 router.post("/", wrapAsync(controller.createGoal.bind(controller)));
 router.get("/", wrapAsync(controller.getAllGoals.bind(controller)));
